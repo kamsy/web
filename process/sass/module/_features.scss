@@ -1,10 +1,13 @@
 .container {
-    width: 100%;
     margin-bottom: 100px;
     #feature & {
         h2 {
             font-size: 20px;
             font-family: $font-main;
+        }
+        .row {
+            width: 80%;
+            margin: 0 auto;
         }
     }
     h3 {

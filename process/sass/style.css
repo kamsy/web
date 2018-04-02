@@ -445,13 +445,17 @@ button .btn-primary:hover {
 }
 
 .container {
-  width: 100%;
   margin-bottom: 100px;
 }
 
 #feature .container h2 {
   font-size: 20px;
   font-family: "Merriweather", Helvetica, sans-serif;
+}
+
+#feature .container .row {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .container h3 {
@@ -589,7 +593,8 @@ button .btn-primary:hover {
 
 #gallery .container {
   width: 80%;
-  height: 280px;
+  min-height: 300px;
+  margin-bottom: 0;
   margin-top: 30px;
 }
 
@@ -597,21 +602,10 @@ button .btn-primary:hover {
   margin-top: 30px;
 }
 
-#gallery .container .effect-chico {
-  margin-top: 20px;
-}
-
-#gallery .container img {
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  padding: 0;
-}
-
 .parallax-window {
   min-height: 400px;
   margin-top: 100px;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
   background: linear-gradient(to bottom, transparent, transparent), url("../images/3.jpg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -779,7 +773,7 @@ button .btn-primary:hover {
   margin: auto;
   margin-bottom: 0;
   height: 60px;
-  width: 80%;
+  width: 54%;
   list-style: none;
 }
 

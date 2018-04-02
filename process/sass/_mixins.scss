@@ -16,3 +16,13 @@
         clear: both;
     }
 }
+
+@mixin imgGrid($qty, $margin) {
+    width: ((100% - (($qty - 1) * $margin)) / $qty);
+    &:nth-child() {
+        margin: 0 $margin $margin 0;
+    }
+    &::nth-child(#{$qty}) {
+        margin: 0;
+    }
+}
