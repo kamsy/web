@@ -1,2 +1,2 @@
 # web
-First take project with sass
+First project with sass

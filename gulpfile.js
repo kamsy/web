@@ -1,34 +1,27 @@
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
-    sass = require('gulp-ruby-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
+    sass = require('gulp-sass'),
     webserver = require('gulp-webserver');
 
 gulp.task('js', function() {
-    return gulp.src('builds/web/js/myscript.js')
+    return gulp.src('app/js/script.js')
         .pipe(jshint('./.jshintrc'))
         .pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('sass', function() {
-    return sass('process/sass/style.scss', {
-            sourcemap: true,
-            style: 'expanded'
-        })
-        .on('error', function(err) {
-            console.error('Error!', err.message);
-        })
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('builds/web/css'));
+    return gulp.src('app/scss/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('app/css'))
 });
 
 gulp.task('watch', function() {
-    gulp.watch('builds/web/js/**/*', ['js']);
-    gulp.watch(['process/sass/**/*'], ['sass']);
+    gulp.watch('app/js/**/*.js', ['js'])
+    gulp.watch('app/scss/**/*.scss', ['sass']);
 });
 
 gulp.task('webserver', function() {
-    gulp.src('builds/web/')
+    gulp.src('app/')
         .pipe(webserver({
             livereload: true,
             open: true

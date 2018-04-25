@@ -1,0 +1,28 @@
+#gallery {
+    background: $whitesmoke;
+    .container {
+        width: 80%;
+        min-height: 300px;
+        margin-bottom: 0;
+        #gallery & {
+            h3 {
+                margin-top: 30px;
+            }
+        }
+        margin-top: 30px;
+    }
+    .row {
+        width: 60%;
+        margin: 20px auto;
+        @include clearfix;
+        .item {
+            float: left;
+            @include imgGrid(4, 1.5%);
+            img {
+                display: block;
+                border-radius: 10px;
+                max-width: 100%;
+            }
+        }
+    }
+}
